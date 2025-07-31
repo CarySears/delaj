@@ -278,35 +278,9 @@
             font-size: 18px;
         }
 
-        /* Chat Widget Placeholder */
-        .chat-widget-placeholder {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 350px;
-            height: 500px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px;
-            border: 2px dashed #c9a96e;
-            z-index: 1000;
-        }
-
-        .chat-widget-placeholder h4 {
-            color: #c9a96e;
-            margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .chat-widget-placeholder p {
-            color: #888;
-            line-height: 1.6;
+        /* Engagement Widget Container */
+        #engagement-widget-container {
+            /* The widget will handle its own positioning and styling */
         }
 
         /* Responsive Design */
@@ -337,13 +311,6 @@
             .contact-content {
                 flex-direction: column;
                 gap: 20px;
-            }
-
-            .chat-widget-placeholder {
-                width: 300px;
-                height: 400px;
-                bottom: 20px;
-                right: 20px;
             }
 
             .profile-placeholder {
@@ -444,12 +411,32 @@
         </div>
     </section>
 
-    <!-- Chat Widget Placeholder -->
-    <div class="chat-widget-placeholder">
-        <h4>Advanced Chat Widget</h4>
-        <p>This is where your improved chat widget will be placed. The widget will provide superior customer engagement and support capabilities for Studio Delaj clients.</p>
-        <p style="margin-top: 20px; font-size: 14px; color: #c9a96e;">Demo placeholder - widget implementation coming soon</p>
-    </div>
+    <!-- Engagement Widget Container -->
+    <div id="engagement-widget-container"></div>
+
+    <!-- Start Engagement Widget Script -->
+    <script>
+        window.engagementContextExtra = {
+            // Add your custom data here
+        };
+        (function (w, i, d, g, e, t) {
+            const s = w.createElement(i);
+            d.forEach(([k, v]) => s.setAttribute(k, v));
+            w.body.appendChild(s);
+        })(
+            document,
+            'script',
+            [['async', 1],
+                ['crossorigin', 1],
+                ['type', 'module'],
+                ['id', 'engagementWidget'],
+                ['src', 'https://cdn.chatwidgets.net/widget/livechat/bundle.js'],
+                ['data-env', '//graph.mycrmsupport.net'],
+                ['data-instance', 'aIpPk9pg5fzfWp3H'],
+                ['data-container', '#engagement-widget-container']]
+        );
+    </script>
+    <!-- End Engagement Widget Script -->
 
     <script>
         // Simple mobile menu toggle (if needed for future functionality)
